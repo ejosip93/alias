@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.linkStyle {
+  margin-left: auto;
+}
+
+.whiteColor {
+  color: white !important;
+}
+
+.toast {
+  max-width: 75%;
+}
+
+.imageSize {
+  max-height:100%;
+  max-width:100%;
+}

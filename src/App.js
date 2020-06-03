@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Navbar from "react-bootstrap/Navbar";
+import TeamForm from "./TeamForm";
+import {Link, Route, Switch} from "react-router-dom";
+import TeamList from "./TeamList";
+import Game from "./Game";
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <div className="bg-light">
+       <Navbar bg="dark" expand="lg" className="d-flex flex-row">
+           <Navbar.Brand className="whiteColor"><Link to="/">Alias</Link></Navbar.Brand>
+           <Link className="linkStyle" to="addTeam">Add new team</Link>
+       </Navbar>
+         <Switch>
+             <Route exact path="/">
+                 <TeamList/>
+             </Route>
+            <Route path="/addTeam">
+                <TeamForm/>
+            </Route>
+             <Route path="/game">
+                <Game/>
+             </Route>
+         </Switch>
+     </div>
   );
 }
 
